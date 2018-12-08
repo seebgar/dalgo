@@ -20,9 +20,8 @@ public class ProblemaA {
 		while (n != 0) {
 			int[] array = new int[n];
 
-			for (int i = 0; i < n; i++) {
+			for (int i = 0; i < n; i++) 
 				array[i] = scan.nextInt();
-			}
 
 			ans += longest(n, array) + "\n";
 			n = scan.nextInt();
