@@ -26,7 +26,7 @@ public class ProblemaB {
 			for (int i = 0; i < n; i++) 
 				rB[i] = scan.nextInt();
 
-			ans += aux(0, rA, rB, c);
+			ans += aux(0, rA, rB, c) + "\n";
 			
 			n = scan.nextInt();
 			c = scan.nextInt();
@@ -35,7 +35,6 @@ public class ProblemaB {
 		System.out.println(ans);
 		scan.close();
 	}
-
 
 	public static int aux(int i, int[] rA, int[] rB, int c) {
 		if (i == rA.length) return c;
@@ -46,22 +45,4 @@ public class ProblemaB {
 		return aux(i+1, rA, rB, Math.max(a, b));		
 	}
 
-
-
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
