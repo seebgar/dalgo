@@ -34,22 +34,6 @@ public class ProblemaC {
 		scan.close();
 	}
 
-
-	
-	/**
-	 * A partir de parejas de estimaciones, se calculan primero los valores que se interceptan. 
-	 * Luego se obtienen los valores minimos que pertenecen a intercepciones y se obtienen el minimo
-	 * entre estos para obtener la velocidad observable estimada a partir de intercepciones.
-	 * En el caso en el que no hay intercepciones entre las estimaciones, se obtiene el promedio
-	 * de las estimacion menor entre las estimaciones.
-	 * 
-	 * @pre el arreglo de estimaciones no esta vacio y solo contiene parejas cuyos valores x y son 
-	 * el valor de velocidad minima y maxima para una estimacion.
-	 * @post se obtiene la velocidad observable estimada
-	 * @param n cantidad de estimaciones
-	 * @param tuples arreglo de estimaciones 
-	 * @return la velocidad observable estimada
-	 */
 	public static int aux(int n, Pair<Integer, Integer>[] tuples) {
 
 		ArrayList<Integer> interceptos_x = new ArrayList<>();
@@ -99,13 +83,6 @@ public class ProblemaC {
 
 	}
 	
-	
-	/**
-	 * Clase que represneta una Pareja de valores 
-	 * 
-	 * @param <S>
-	 * @param <T>
-	 */
 	public static class Pair <S, T> {
 		private final S x;
 		private final T y;
