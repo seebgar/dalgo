@@ -22,12 +22,12 @@ public class ProblemaB {
 
 			for (int i = 0; i < n; i++) 
 				rA[i] = scan.nextInt();
-			
+
 			for (int i = 0; i < n; i++) 
 				rB[i] = scan.nextInt();
 
-			ans += aux(n, 0, rA, rB, c) + "\n";
-			
+			ans += aux(n, 0, rA, rB, c, false) + "\n";
+
 			n = scan.nextInt();
 			c = scan.nextInt();
 		}
@@ -36,13 +36,17 @@ public class ProblemaB {
 		scan.close();
 	}
 
-	public static int aux(int n, int i, int[] rA, int[] rB, int c) {
+	public static int aux(int n, int i, int[] rA, int[] rB, int c, boolean bool) {
 		if (i == n) return c;
-		
-		int a = (int) Math.floor(c * (1 + ((rA[i]*1.00)/100)));
+
+		int a =  (int) Math.floor(c * (1 + ((rA[i]*1.00)/100)));
 		int b = (int) Math.floor(c * (1 + ((rB[i]*1.00)/100)));
-				
-		return aux(n, i+1, rA, rB, Math.max(a, b));		
+
+		if(bool)
+			return Math.max(aux(n, i+1, rA, rB, b, !bool), aux(n, i+1, rA, rB, c, !bool));
+		else
+			return Math.max(aux(n, i+1, rA, rB, a, !bool),Math.max( aux(n, i+1, rA, rB, b, bool), aux(n, i+1, rA, rB, c, bool)));
+
 	}
 
 }
